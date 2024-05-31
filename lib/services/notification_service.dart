@@ -7,7 +7,7 @@ class NotificationService {
 
   Future<void> initNotifications() async {
     AndroidInitializationSettings initializationSettingsAndroid =
-        const AndroidInitializationSettings('flutter_logo');
+        const AndroidInitializationSettings('@mipmap/ic_launcher');
 
     var initilizationSettingsIOS = DarwinInitializationSettings(
         requestAlertPermission: true,
@@ -25,6 +25,8 @@ class NotificationService {
   notificationDetails() {
     return const NotificationDetails(
         android: AndroidNotificationDetails('channelId', 'channelName',
+            channelDescription: 'channelDescription',
+            icon: '@mipmap/ic_launcher',
             importance: Importance.max),
         iOS: DarwinNotificationDetails());
   }
